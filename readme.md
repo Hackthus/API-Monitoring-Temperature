@@ -1,7 +1,7 @@
 ## Nodejs Application avec Express, Socket.io et MongoDB
 
 ## Description
-    Mise en place d'un serveur Nodejs capable de surveiller lesniveaux de température et d'humidité dans une salle de serveurs. 
+    Mise en place d'un serveur Nodejs capable de surveiller les niveaux de température et d'humidité dans une salle de serveurs. 
     Cette application est construite en utilisant Nodejs, Express, Socket.io et MongoDB. Elle permet de gérer l'inscription et la connexion des utilisateurs, simule des capteurs, et gère les alertes associées. La communication en temps réel est assurée par Socket.io.
 
 ## Fonctionnalités
