@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <title>FrontEnd</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io();
+
+            socket.on('sensorData', (data) => {
+                const display = document.getElementById('sensor-data');
+                display.innerHTML = `Température: ${data.temperature}°C, Humidité: ${data.humidity}%`;
+            });
+
+            socket.on('sensorAlert', (alert) => {
+                const alertDisplay = document.getElementById('sensor-alert');
+                alertDisplay.innerHTML = `<strong>ALERTE !</strong> ${alert.message}`;
+                alertDisplay.style.display = 'block';
+                
+                // Optionally, hide the alert after a few seconds
+                setTimeout(() => {
+                    alertDisplay.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+    <style>
+        #sensor-alert {
+            display: none;
+            background-color: rgb(213, 209, 209);
+            color: red; 
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="logo.jpeg" class="navbar-brand" alt="Logo de Mon Site" width="100" height="65">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="stage.php">Activités</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">À Propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"style=" font-size: 16px;   padding: 7px 14px; border-radius: 5px;">Connexion</a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"style="font-size:16px;  background-color:  #e59866 ; color: white ;  padding: 7px 14px; border-radius: 5px;">Inscription</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+    
+      <p>Arnold Edwin</p></br>
+    <h1>Variation de Temperature Et Humidité</h1>
+    <div id="sensor-data">En attente des données...</div>
+    <div id="sensor-alert"></div>  
+</body>
+</html>
