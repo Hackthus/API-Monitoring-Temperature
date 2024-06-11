@@ -1,34 +1,33 @@
-Nodejs Application avec Express, Socket.io et MongoDB
+## Nodejs Application avec Express, Socket.io et MongoDB
 
-Description
-Mise en place d'un serveur Nodejs capable de surveiller lesniveaux de température et d'humidité dans une salle de serveurs. 
-Cette application est construite en utilisant Nodejs, Express, Socket.io et MongoDB. Elle permet de gérer l'inscription et la connexion des utilisateurs, simule des capteurs, et gère les alertes associées. La communication en temps réel est assurée par Socket.io.
+## Description
+    Mise en place d'un serveur Nodejs capable de surveiller lesniveaux de température et d'humidité dans une salle de serveurs. 
+    Cette application est construite en utilisant Nodejs, Express, Socket.io et MongoDB. Elle permet de gérer l'inscription et la connexion des utilisateurs, simule des capteurs, et gère les alertes associées. La communication en temps réel est assurée par Socket.io.
 
-Fonctionnalités
+## Fonctionnalités
 
     Inscription des utilisateurs : Permet aux utilisateurs de s'inscrire.
     Connexion des utilisateurs : Permet aux utilisateurs de se connecter.
     Simulation de capteur : Génère des données de capteurs et des alertes.
     Communication en temps réel : Utilise WebSocket pour transmettre les données et les alertes en temps réel aux clients.
 
-Prérequis
+## Prérequis
 
     Node.js (version 12 ou supérieure)
     MongoDB
 
-Installation
+## Installation
 
     Clonez le dépôt :
+    git clone https://github.com/votre-utilisateur/votre-repo.git
 
-git clone https://github.com/votre-utilisateur/votre-repo.git
 cd votre-repo
 
-Installez les dépendances :
+## Installez les dépendances :
 
+    npm install
 
-npm install
-
-Connectez-vous à MongoDB :
+## Connectez-vous à MongoDB :
 
     Assurez-vous que MongoDB est installé et en cours d'exécution sur votre machine ou utilisez une base de données MongoDB hébergée.
 
@@ -40,12 +39,11 @@ npm start
 
 Le serveur est maintenant en cours d'exécution à l'adresse suivante :
 
-arduino
-
     http://localhost:8000
 
-Utilisation des API avec Postman
-Inscription
+## Utilisation des API avec Postman
+
+# Inscription
 
     URL : http://localhost:8000/api/users/inscription
 
@@ -64,7 +62,7 @@ Réponse attendue :
       "message": "Utilisateur créé avec succès !"
     }
 
-Connexion
+# Connexion
 
     URL : http://localhost:8000/api/users/connexion
 
@@ -76,7 +74,6 @@ Connexion
   "email": "exemple@example.com",
   "password": "votre-mot-de-passe"
 }
-
 Réponse attendue :
 
     {
@@ -85,12 +82,12 @@ Réponse attendue :
       "token": "votre_token_jwt"
     }
 
-Communication en temps réel avec Socket.io
+## Communication en temps réel avec Socket.io
 
     Connectez-vous à http://localhost:8000 dans votre navigateur.
     Utilisez l'outil de développement du navigateur pour écouter les événements WebSocket et afficher les données des capteurs et les alertes en temps réel.
 
-Structure du Projet
+## Structure du Projet
 
     config : Configuration de la base de données.
     middlewares : Middlewares de l'application.
