@@ -33,9 +33,9 @@ cd votre-repo
 
 Lancer le serveur
 
-    Démarrez le serveur :
+Démarrez le serveur :
 
-npm start
+    npm start
 
 Le serveur est maintenant en cours d'exécution à l'adresse suivante :
 
