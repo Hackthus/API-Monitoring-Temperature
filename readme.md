@@ -18,10 +18,9 @@
 
 ## Installation
 
-    Clonez le dépôt :
-    git clone https://github.com/votre-utilisateur/votre-repo.git
-
-cd votre-repo
+Clonez le dépôt :
+    https://github.com/Hackthus/API-Monitoring-Temperature.git
+    cd API-Monitoring-Temperature
 
 ## Installez les dépendances :
 
